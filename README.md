@@ -105,31 +105,6 @@ Pravasa acts as an intelligent, unified travel companion:
 
 To help all team members understand our data sources, here is every external API integrated into Pravasa:
 
-```mermaid
-flowchart LR
-    subgraph Pravasa_App["Pravasa Application"]
-        FE["React Frontend"]
-        BE["FastAPI Backend"]
-    end
-
-    subgraph Live_APIs["External Services"]
-        Gemini["Google Gemini API<br/>(AI Conversations & Itinerary Synthesis)"]
-        Ignav["Ignav Flight API<br/>(Live Flight Search & Fares)"]
-        Nuitee["Nuitee LiteAPI<br/>(Live Hotel Search & Rate Lock)"]
-        Geoapify["Geoapify Places API<br/>(Attractions & Coordinates)"]
-        Wiki["Wikimedia Commons API<br/>(Authentic Photos)"]
-        OSRM["Project OSRM<br/>(Driving Routes & Travel Times)"]
-    end
-
-    FE <--> BE
-    BE <--> Gemini
-    BE <--> Ignav
-    BE <--> Nuitee
-    BE <--> Geoapify
-    BE <--> Wiki
-    BE <--> OSRM
-```
-
 ### Detailed API Breakdown
 
 1. **Google Gemini API** (`gemini-3.8-flash` / `gemini-3.1-flash-lite`)
