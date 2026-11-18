@@ -1,155 +1,153 @@
-# 🧭 Pravasa – AI-Powered Virtual Travel Agent
+# Pravasa – AI-Powered Virtual Travel Agent
 
-![Project Status](https://img.shields.io/badge/Status-Active_Development-brightgreen)
-![Frontend](https://img.shields.io/badge/Frontend-React_19-blue)
-![Backend](https://img.shields.io/badge/Backend-FastAPI-009688)
-![AI](https://img.shields.io/badge/AI-LangGraph_+_Gemini-orange)
-![License](https://img.shields.io/badge/License-MIT-purple)
+An intelligent virtual travel assistant that helps users plan personalised trips, discover destinations, compare travel options and generate itineraries using AI and travel APIs.
 
-**Pravasa** is an AI-powered virtual travel agent designed to simplify travel planning across India. It combines conversational AI, real-time travel discovery, intelligent itinerary generation and budget management into one platform.
+## Key Features
 
-Our goal is to provide travellers with a unified platform to discover destinations, explore flights and hotels, plan sightseeing activities and organise complete trips.
+- AI-powered travel conversation and intent extraction
+- Guided trip-planning workflow
+- Flight and hotel search
+- Destination and tourist-place discovery
+- Location-based recommendations
+- Place images and information
+- Route planning and distance calculation
+- Budget estimation and itinerary generation
+- Itinerary modification and replanning
+- Save and manage trips
 
----
+## Technology Stack
 
-## 🚀 Key Features
-
-- **AI Travel Assistant:** Understands travel requirements through natural language conversations.
-- **Smart Travel Planning:** Extracts destinations, dates, budgets and traveller preferences.
-- **Pan-India Destination Selection:** Supports destination discovery across all 28 Indian States and 8 Union Territories.
-- **Flight Discovery:** Searches available flights and provides airline booking redirections.
-- **Hotel Discovery:** Searches hotels, room types, amenities and available rates.
-- **Places to Visit:** Discovers tourist attractions, museums and historical landmarks.
-- **Smart Itinerary Generation:** Organises activities into morning, afternoon and evening schedules.
-- **Budget Management:** Tracks estimated expenses across flights, hotels, transportation and sightseeing.
-- **Trip Management:** Saves travel plans for future access.
-- **Itinerary Replanning:** Allows users to modify and reorganise their travel plans.
-
-## 🛠️ Technology Stack
-
-| Category | Technologies |
+| Component | Technology |
 |---|---|
-| Frontend | React 19, TypeScript, Vite |
-| Styling | Tailwind CSS 4 |
+| Frontend | React, TypeScript, Vite |
+| Styling | Tailwind CSS |
 | Backend | Python, FastAPI |
 | AI Orchestration | LangGraph |
-| AI Model | Google Gemini |
-| Machine Learning | PyTorch, Hugging Face Transformers, CLIP |
-| Data Validation | Pydantic |
-| Database (Planned) | Supabase PostgreSQL |
-| Testing | Pytest, Pytest-Asyncio |
+| Cloud LLM | Google Gemini |
+| Local LLM Runtime | Ollama |
+| Machine Learning | PyTorch, Transformers, CLIP |
+| Database | Supabase (planned) |
+| Routing | OSRM |
 | Version Control | Git, GitHub |
 
-## 🌐 APIs & External Integrations
+## APIs and Integrations
 
-| API / Service | Purpose | Status |
-|---|---|---|
-| Google Gemini API | AI conversations, intent extraction and itinerary synthesis | Integrated |
-| Ignav API | Flight discovery | Integrated |
-| Nuitee Connect (LiteAPI) | Hotel search and rate pre-booking | Integrated |
-| Geoapify API | Geocoding and tourist places discovery | Integrated |
-| Wikimedia Commons API | Tourist attraction photographs | Integrated |
-| OSRM | Road distance and travel time calculation | Integrated |
-| Amadeus API | Alternative travel inventory provider | Not Implemented |
-| Supabase | Cloud database and user authentication | Planned |
+| API / Service | Purpose |
+|---|---|
+| Google Gemini API | AI-powered conversations and travel planning |
+| Ollama | Local execution of open-source LLMs |
+| Ignav | Travel-related integration |
+| Nuitee LiteAPI | Hotel search and related services |
+| Geoapify | Geocoding and location discovery |
+| Wikimedia Commons | Destination images |
+| OSRM | Route calculation |
+| Amadeus | Flight integration / evaluation |
 
-*Integration status describes the current implementation, not necessarily live production availability. Some services use fallback data when credentials or providers are unavailable.*
+### AI Model Support
 
-## 🏗️ System Architecture
+Pravasa is designed to support two AI execution options:
 
-Pravasa follows a modular architecture consisting of a React frontend, FastAPI backend, AI workflows, machine learning services and external travel APIs.
+- **Google Gemini:** Cloud-based LLM for AI-powered travel assistance.
+- **Ollama:** Local LLM runtime for running supported open-source models on a local machine.
+
+Ollama can provide an alternative to cloud-based inference. Its actual availability depends on local model installation and backend integration.
+
+## System Architecture
 
 ```mermaid
 flowchart TD
-    A[User] <--> B[React Frontend]
-    B <--> C[FastAPI Backend]
-    C <--> D[AI Engine - LangGraph]
-    D <--> E[Google Gemini]
-    C <--> F[Flight API - Ignav]
-    C <--> G[Hotel API - Nuitee]
-    C <--> H[Places API - Geoapify]
-    C <--> I[Wikimedia Commons]
-    C <--> J[OSRM Routing]
-    C <--> K[ML Engine - CLIP]
-    B -.-> L[Local Storage]
-    C -.-> M[Supabase - Planned]
+    A[User] --> B[React Frontend]
+    B --> C[FastAPI Backend]
+    C --> D[LangGraph AI Orchestration]
+
+    D --> E[Google Gemini API]
+    D --> F[Ollama Local LLM]
+
+    C --> G[Travel API Integrations]
+    G --> H[Flight Services]
+    G --> I[Hotel Services]
+    G --> J[Geoapify]
+    G --> K[Wikimedia Commons]
+    G --> L[OSRM Routing]
+
+    C --> M[ML Engine]
+    M --> N[CLIP Image Matching]
+
+    C --> O[Supabase Database]
+    B --> P[Trip Management]
 ```
 
-## 📁 Project Structure
+*Note: Gemini and Ollama represent alternative AI execution options. Supabase and any integrations not yet implemented are planned components.*
+
+## Project Structure
 
 ```text
 travel-agentic/
-│
-├── ai_engine/          # AI prompts, services and workflows
-├── backend/            # FastAPI backend and REST APIs
-├── database/           # Database schemas and migrations
-├── docs/               # Project documentation
-├── frontend/           # React + TypeScript application
-├── integrations/       # External API clients and mock data
-├── logo/               # Project branding and logos
-├── ml_engine/          # Machine learning modules
-├── scratch/            # Experimental development files
-├── tests/              # Automated testing
-│
-├── .env.example        # Environment configuration template
-├── pyproject.toml      # Python project configuration
-└── README.md           # Project documentation
+├── ai_engine/
+├── backend/
+├── database/
+├── docs/
+├── frontend/
+├── integrations/
+├── logo/
+├── ml_engine/
+├── scratch/
+├── tests/
+├── .env.example
+├── .gitignore
+├── pyproject.toml
+└── README.md
 ```
 
-## 📊 Development Progress
+## Development Progress
 
-| Module | Status | Progress |
-|---|---|---|
-| Frontend Development | Completed | 6-step guided travel workflow |
-| Backend Development | Completed | FastAPI endpoints and services |
-| AI Engine | Completed | LangGraph workflows and Gemini integration |
-| ML Engine | Partially Completed | CLIP image verification |
-| Flight Integration | Integrated | Ignav API |
-| Hotel Integration | Integrated | Nuitee LiteAPI |
-| Places Integration | Integrated | Geoapify and Wikimedia |
-| Road Routing | Integrated | OSRM |
-| Database | Pending | Supabase implementation |
-| Automated Testing | Completed | 383 reported passing tests |
-| Deployment | Pending | Cloud deployment |
+| Module | Status |
+|---|---|
+| Frontend development | Completed |
+| Backend development | Completed |
+| AI travel assistant | Implemented |
+| LangGraph orchestration | Implemented |
+| Gemini integration | Implemented |
+| Ollama local LLM | Planned / integration in progress |
+| Flight integration | Partially implemented |
+| Hotel integration | Implemented |
+| Location and places discovery | Implemented |
+| Image integration | Implemented |
+| Route calculation | Implemented |
+| ML image matching | Partially implemented |
+| Database integration | Pending |
+| Deployment | Pending |
 
-### ✅ Work Completed
+## Completed Work
 
-- Developed the React-based travel planning interface.
-- Implemented the six-step guided travel workflow.
-- Integrated conversational AI using LangGraph and Gemini.
-- Implemented travel intent extraction and clarification workflows.
-- Integrated flight and hotel discovery services.
-- Integrated tourist attraction discovery and image retrieval.
-- Implemented itinerary generation and replanning.
-- Developed budget calculation and validation.
-- Implemented local trip saving using browser localStorage.
-- Created automated backend and AI workflow tests.
+- Developed the React-based frontend.
+- Implemented FastAPI backend services.
+- Built AI-powered travel conversation and intent extraction.
+- Integrated LangGraph for AI workflow orchestration.
+- Integrated travel-related APIs.
+- Implemented destination discovery and itinerary generation.
+- Added route calculation and budget estimation.
+- Implemented trip management using local storage.
+- Created automated tests for project functionality.
 
-### 🔄 Work In Progress
+## Work in Progress
 
-- Round-trip flight discovery.
-- Multi-city itinerary improvements.
-- Railway schedule integration research.
-- Offline capability and PWA support.
-- Further AI workflow improvements.
+- Improving flight search and integration.
+- Enhancing itinerary generation and replanning.
+- Evaluating local LLM support through Ollama.
+- Improving AI model selection and fallback handling.
 
-### 📌 Pending Work
+## Pending Work
 
-- Implement Supabase database and user authentication.
-- Enable cloud-based trip storage and synchronisation.
-- Complete hotel payment gateway integration.
-- Implement additional real-time travel information.
-- Improve end-to-end testing.
-- Implement Docker and CI/CD pipelines.
-- Deploy the frontend and backend.
+- Complete Ollama integration and local model testing.
+- Implement Supabase database and authentication.
+- Implement cloud-based trip synchronisation.
+- Improve round-trip and multi-city travel support.
+- Add weather integration.
+- Implement deployment and CI/CD.
+- Explore offline/PWA support.
 
-## ⚙️ Installation & Setup
-
-### Prerequisites
-
-- Python 3.11+
-- Node.js 18+
-- Git
+## Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -164,102 +162,65 @@ cd travel-agentic
 python -m venv .venv
 ```
 
-Activate the environment:
-
-**Windows:**
-```bash
-.\.venv\Scripts\Activate.ps1
-```
-
-**Install dependencies:**
-```bash
-pip install -r backend/requirements.txt
-```
-
-Configure environment variables:
+Activate the environment and install dependencies:
 
 ```bash
-copy backend\.env.example backend\.env
+pip install -e .
 ```
 
-Add the required API credentials to `backend/.env`.
-
-Start the backend:
-
-```bash
-uvicorn backend.app.main:app --reload --port 8000
-```
-
-Backend documentation: http://localhost:8000/docs
+Start the backend using the project's configured FastAPI entry point.
 
 ### 3. Frontend Setup
-
-Open another terminal:
 
 ```bash
 cd frontend
 npm install
-```
-
-Configure environment variables:
-
-```bash
-copy .env.example .env
-```
-
-Start the frontend:
-
-```bash
 npm run dev
 ```
 
-Frontend URL: http://localhost:5173
-
 ### 4. Run Tests
 
-From the project root:
-
 ```bash
-pytest -v
+pytest
 ```
 
-For frontend build verification:
+### 5. Local LLM Setup (Ollama)
+
+Install Ollama and download a supported model:
 
 ```bash
-cd frontend
-npm run build
+ollama pull llama3.2
 ```
 
-## ⚠️ Current Limitations
+Start the Ollama service:
 
-- Flight booking is completed through external airline redirections; Pravasa does not issue flight tickets or PNRs.
-- Hotel rate pre-booking is implemented, but final payment processing is pending.
-- Saved trips currently use browser localStorage.
-- Supabase cloud database synchronisation is not yet implemented.
-- External API availability and quotas can affect live results.
-- Some integrations have fallback reference data.
+```bash
+ollama serve
+```
 
-## 🔮 Future Scope
+The backend must be configured to communicate with the local Ollama API before local inference is available.
 
-- Multilingual and voice-based AI travel assistance.
-- Real-time weather and travel alerts.
-- Autonomous itinerary modification.
-- Group trip planning and collaboration.
-- Railway and additional transport integrations.
-- Cloud-based user accounts and trip synchronisation.
-- Production deployment and scalability improvements.
+## Current Limitations
 
-## 📌 Project Information
+- Flight booking is handled through external airline or travel-provider redirects.
+- No PNR generation or verification is implemented.
+- Hotel payment processing is not fully implemented.
+- Trip data currently uses local storage.
+- Supabase integration is pending.
+- API availability and quotas may affect results.
+- Ollama functionality depends on local installation and backend integration.
 
-| Detail | Information |
-|---|---|
-| Project Name | Pravasa – AI-Powered Virtual Travel Agent |
-| Project Type | AI + Full-Stack Web Application |
-| Primary Focus | Intelligent Travel Planning |
-| Development Status | Active Development |
-| Repository | [GitHub – travel-agentic](https://github.com/knvijaykumar/travel-agentic) |
-| Main Branch | `main` |
+## Future Scope
 
----
+- Complete local LLM integration using Ollama.
+- Support additional open-source language models.
+- Improve AI-powered personalised recommendations.
+- Implement persistent cloud storage and user authentication.
+- Expand travel-provider integrations.
+- Deploy the platform for public access.
 
-**Pravasa — Plan with confidence. Explore with curiosity. Travel smart.** 🇮🇳
+## Repository
+
+GitHub: https://github.com/knvijaykumar/travel-agentic
+
+**Project:** Pravasa – AI-Powered Virtual Travel Agent
