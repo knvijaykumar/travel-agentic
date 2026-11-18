@@ -1,0 +1,67 @@
+[
+  {
+    "id": "hotel_kyoto_01",
+    "name": "Kyoto Granbell Hotel",
+    "city_code": "TYO",
+    "rating": 4.6,
+    "price_per_night": 135.0,
+    "currency": "USD",
+    "address": "Yamatoji-dori, Higashiyama-ku, Kyoto",
+    "amenities": ["Free WiFi", "Traditional Public Bath", "Restaurant", "Bar"],
+    "check_in": "2026-12-01",
+    "check_out": "2026-12-04",
+    "booking_url": "https://example.com/hotels/kyoto-granbell"
+  },
+  {
+    "id": "hotel_kyoto_02",
+    "name": "The Thousand Kyoto",
+    "city_code": "TYO",
+    "rating": 4.8,
+    "price_per_night": 280.0,
+    "currency": "USD",
+    "address": "Higashi Shiokoji-cho, Shimogyo-ku, Kyoto",
+    "amenities": ["Luxury Spa", "Fitness Center", "Fine Dining", "Concierge"],
+    "check_in": "2026-12-01",
+    "check_out": "2026-12-04",
+    "booking_url": "https://example.com/hotels/thousand-kyoto"
+  },
+  {
+    "id": "hotel_kyoto_03",
+    "name": "Gion Ryokan Q-beh",
+    "city_code": "TYO",
+    "rating": 4.5,
+    "price_per_night": 65.0,
+    "currency": "USD",
+    "address": "Washio-cho, Higashiyama-ku, Kyoto",
+    "amenities": ["Tatami Rooms", "Garden View", "Shared Kitchen", "Free Tea"],
+    "check_in": "2026-12-01",
+    "check_out": "2026-12-04",
+    "booking_url": "https://example.com/hotels/gion-ryokan-qbeh"
+  },
+  {
+    "id": "hotel_paris_01",
+    "name": "CitizenM Paris Champs-Élysées",
+    "city_code": "PAR",
+    "rating": 4.6,
+    "price_per_night": 195.0,
+    "currency": "USD",
+    "address": "Rue François 1er, 75008 Paris",
+    "amenities": ["Rooftop Bar", "High-speed WiFi", "King Bed", "24/7 Food"],
+    "check_in": "2026-12-01",
+    "check_out": "2026-12-04",
+    "booking_url": "https://example.com/hotels/citizenm-paris"
+  },
+  {
+    "id": "hotel_paris_02",
+    "name": "Pullman Paris Tour Eiffel",
+    "city_code": "PAR",
+    "rating": 4.7,
+    "price_per_night": 320.0,
+    "currency": "USD",
+    "address": "18 Avenue De Suffren, 75015 Paris",
+    "amenities": ["Eiffel View Balcony", "Fitness Lounge", "California Bar & Grill"],
+    "check_in": "2026-12-01",
+    "check_out": "2026-12-04",
+    "booking_url": "https://example.com/hotels/pullman-tour-eiffel"
+  }
+]
